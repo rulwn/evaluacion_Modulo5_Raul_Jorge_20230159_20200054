@@ -1,7 +1,7 @@
 import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
-import { getStorage } from 'firebase/storage';
-import { API_KEY, AUTH_DOMAIN, PROJECT_ID, STORAGE_BUCKET, MESSAGING_SENDER_ID, APP_ID, test} from '@env';
+import { getAuth } from "firebase/auth";
+import { API_KEY, AUTH_DOMAIN, PROJECT_ID, STORAGE_BUCKET, MESSAGING_SENDER_ID, APP_ID } from '@env';
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
@@ -12,7 +12,7 @@ const firebaseConfig = {
   messagingSenderId: MESSAGING_SENDER_ID,
   appId: APP_ID    
 };
-console.log(test)
+
 console.log("Valor de configuracion", firebaseConfig);
 
 // Initialize Firebase
@@ -23,20 +23,20 @@ if (app) {
   console.log('Firebase initialization failed');
 }
 
+// Initialize Firestore Database
 const database = getFirestore(app);
 if (database) {
   console.log('Firestore initialized correctly');
 } else {
   console.log('Firestore initialization failed');
 }
-/*
-const storage = getStorage(app);
 
-if (storage) {
-  console.log('storage initialized correctly');
+// Initialize Firebase Authentication
+const auth = getAuth(app);
+if (auth) {
+  console.log('Auth initialized correctly');
 } else {
-  console.log('storage initialization failed');
+  console.log('Auth initialization failed');
 }
-*/
-//export { database,storage };
-export { database };
+
+export { database, auth };
