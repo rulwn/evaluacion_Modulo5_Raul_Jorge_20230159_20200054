@@ -17,8 +17,7 @@ Aplicación móvil desarrollada con React Native Expo que implementa un sistema 
 
 ## 🎥 Video Demostrativo
 
-[Enlace al video demostrativo de la aplicación]
-*(El video debe mostrar todas las funcionalidades: registro, login, home screen, edición de perfil y gestión de productos)*
+https://drive.google.com/file/d/1M3nePf0dOMKvMOc5_uWlChCbzZJnKRPy/view?usp=sharing
 
 ## ✨ Características Principales
 
@@ -309,3 +308,4 @@ Este proyecto fue desarrollado con fines educativos para el Instituto Técnico R
 **Fecha:** Septiembre 2024  
 
 **Versión:** 1.0.0
+
