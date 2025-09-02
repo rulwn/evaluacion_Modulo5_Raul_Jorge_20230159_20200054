@@ -34,14 +34,13 @@ const RegisterScreen = ({ navigation }) => {
   // Opciones de especialidades
   const especialidades = [
     'Desarrollo de Software',
-    'Redes y Telecomunicaciones',
-    'Soporte Técnico',
     'Diseño Gráfico',
-    'Marketing Digital',
-    'Administración',
+    'Arquitectura',
     'Contabilidad',
-    'Electricidad',
+    'EMCA',
     'Electrónica',
+    'Energias Renovables',
+    'Tercer Ciclo',
     'Mecánica Automotriz',
   ];
 
