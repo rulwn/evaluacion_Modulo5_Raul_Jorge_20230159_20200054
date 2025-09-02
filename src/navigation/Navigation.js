@@ -7,7 +7,7 @@ import { MaterialIcons } from '@expo/vector-icons';
 import { useAuth } from '../context/AuthContext';
 
 // Pantallas de autenticación
-import SplashScreen from '../screens/SplashScreen';
+import SplashScreen from '../screens/SplasScreen';
 import LoginScreen from '../screens/LoginScreen';
 import RegisterScreen from '../screens/RegisterScreen';
 
@@ -120,7 +120,7 @@ const Navigation = () => {
         {!user ? (
           // Stack de autenticación
           <>
-            <Stack.Screen name="Login" component={LoginScreen} />
+            <Stack.Screen name="LoginScreen" component={LoginScreen} />
             <Stack.Screen name="Register" component={RegisterScreen} />
           </>
         ) : (

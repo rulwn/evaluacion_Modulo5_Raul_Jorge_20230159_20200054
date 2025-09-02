@@ -143,6 +143,7 @@ const RegisterScreen = ({ navigation }) => {
   };
 
   return (
+    
     <KeyboardAvoidingView
       behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
       style={styles.container}
@@ -319,14 +320,29 @@ const RegisterScreen = ({ navigation }) => {
                 color={errors.especialidad ? '#ff5252' : '#666'} 
                 style={styles.inputIcon} 
               />
+              
               <Picker
                 selectedValue={formData.especialidad}
-                onValueChange={(itemValue) => updateFormData('especialidad', itemValue)}
+                onValueChange={(itemValue, itemIndex) => {
+                  console.log('Picker seleccionado:', itemValue); // Debug
+                  updateFormData('especialidad', itemValue);
+                }}
                 style={styles.picker}
+                mode="dropdown" // Forzar modo dropdown
+                prompt="Selecciona una especialidad" // Para Android
               >
-                <Picker.Item label="Selecciona una especialidad" value="" />
+                <Picker.Item 
+                  label="Selecciona una especialidad" 
+                  value="" 
+                  color="#999" 
+                />
                 {especialidades.map((especialidad, index) => (
-                  <Picker.Item key={index} label={especialidad} value={especialidad} />
+                  <Picker.Item 
+                    key={index} 
+                    label={especialidad} 
+                    value={especialidad}
+                    color="#1a1a1a"
+                  />
                 ))}
               </Picker>
             </View>
@@ -368,6 +384,7 @@ const styles = StyleSheet.create({
     flexGrow: 1,
     padding: 24,
     paddingTop: 60,
+    paddingBottom: 120, // ✅ AUMENTADO: Espacio extra en la parte inferior
   },
   header: {
     alignItems: 'center',
@@ -450,10 +467,12 @@ const styles = StyleSheet.create({
     backgroundColor: '#ffffff',
     paddingLeft: 16,
     height: 56,
+    marginBottom: 10, // ✅ AGREGADO: Espacio extra debajo del picker
   },
   picker: {
     flex: 1,
     height: 56,
+    color: '#1a1a1a', // Color del texto seleccionado
   },
   errorText: {
     fontSize: 14,
@@ -466,7 +485,7 @@ const styles = StyleSheet.create({
     height: 56,
     justifyContent: 'center',
     alignItems: 'center',
-    marginTop: 20,
+    marginTop: 30, // ✅ AUMENTADO: Más espacio arriba del botón
     shadowColor: '#0288d1',
     shadowOffset: { width: 0, height: 4 },
     shadowOpacity: 0.3,
@@ -488,6 +507,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     marginTop: 30,
+    marginBottom: 20, 
   },
   loginText: {
     fontSize: 16,
